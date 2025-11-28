@@ -73,7 +73,11 @@
   'https://connect.facebook.net/en_US/fbevents.js');
 
   // Инициализация Facebook Pixel
-  fbq('init', '1207266227924288');
+  // ОТКЛЮЧАЕМ автоматические события чтобы избежать дублей
+  fbq('init', '1207266227924288', {
+    autoConfig: false,
+    disablePushState: true
+  });
 
   // Отправка PageView при загрузке страницы
   fbq('track', 'PageView');
